@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6edba1a8729f704296449a1e3881d5b, type: 3}
+  m_Name: DELAKTIG
+  m_EditorClassIdentifier: 
+  productName: DELAKTIG
+  productInfo: "Lenestol, Hillared m\xF8rk bl\xE5"
+  productPrice: 4.990
+  productImage: {fileID: 21300000, guid: fa260155ba91431468a3e3e0f66aad97, type: 3}
+  productDescription: "Dette er en kombinasjon for deg som foretrekker den klassiske
+    lenestolen. Men hvis f\xF8ler for \xE5 v\xE6re litt mer rebelsk kan du bruke ulike
+    trekk p\xE5 seteputa og armlenene/nakkest\xF8tta for \xE5 gj\xF8re stolen mer
+    personlig."
+  inStore: 1
