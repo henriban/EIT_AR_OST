@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ProductDisplay : MonoBehaviour {
 
-    public ProductModel product;
+    public Product product;
 
     public Text productName;
     public Text productInfo;

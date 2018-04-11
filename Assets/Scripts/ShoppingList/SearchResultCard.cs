@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class SearchResultCard : MonoBehaviour {
 
-    public ProductModel product;
+    private Product product;
+
 
     public Image productImage;
     public Text productNameText;
@@ -12,8 +13,14 @@ public class SearchResultCard : MonoBehaviour {
 
     void Start() {
 
+
+    }
+
+    public void Setup(Product currentProduct) {
+
+        product = currentProduct;        
+
         productImage.sprite = product.productImage;
         productNameText.text = product.productName;
-
     }
 }

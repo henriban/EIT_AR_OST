@@ -1,25 +1,31 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ShoppingListItem : MonoBehaviour {
-
-    public ProductModel product;
 
     public Image porductImage;
     public Text productNameText;
 
     public Button removeButton;
 
+    private Product product;
+    private ShoppingList scrollList;
+
     void Start () {
-
-        porductImage.sprite = product.productImage;
-        productNameText.text = product.productName;
-
+        
         removeButton.onClick.AddListener(HandleClick);
 	}
 
+    public void Setup(Product currentProduct, ShoppingList currentScrollList) {
+
+        product = currentProduct;
+        scrollList = currentScrollList;
+
+        porductImage.sprite = product.productImage;
+        productNameText.text = product.productName;
+    }
+
     private void HandleClick() {
-        Debug.Log("Remove ");
+        scrollList.TransferItemToOtherShop(product);
     }
 }

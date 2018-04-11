@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114726344613942620}
   - component: {fileID: 114594872625922144}
   m_Layer: 5
-  m_Name: SeatchResultProductCard
+  m_Name: SearchResultProductCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc4f7a408df9a44cba4eb9b01398b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  product: {fileID: 11400000, guid: bff7313035c16ba42a14f74a52d7a115, type: 2}
   productImage: {fileID: 114394051749578398}
   productNameText: {fileID: 114296185424878736}
 --- !u!114 &114726344613942620
@@ -356,7 +355,7 @@ RectTransform:
   m_GameObject: {fileID: 1267517571604794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 224597400979286490}
   - {fileID: 224494241098015006}
