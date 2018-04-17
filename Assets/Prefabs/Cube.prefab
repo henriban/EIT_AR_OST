@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65423286698292992}
   - component: {fileID: 23367190076210038}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: cube
   m_TagString: Handlekurv
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

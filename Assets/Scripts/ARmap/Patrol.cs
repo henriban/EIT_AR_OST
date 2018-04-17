@@ -92,7 +92,6 @@ public class Patrol : MonoBehaviour
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 if (GotoNextPoint())
                 {
-                    GotoNextPoint();
                     done = true;
 
                 }
