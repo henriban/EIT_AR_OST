@@ -18,5 +18,5 @@ MonoBehaviour:
   productDescription: "Du kan dyrke planter innend\xF8rs hele \xE5ret, ogs\xE5 n\xE5r
     det er lite tilgang p\xE5 dagslys."
   inStore: 0
-  serachResultCard: {fileID: 1267517571604794, guid: 55a81c1d822635847be9a7b8173fde10,
+  productPosition: {fileID: 1224383423218224, guid: 74aecbab735a95a4081d1ac47ccb68e7,
     type: 2}
