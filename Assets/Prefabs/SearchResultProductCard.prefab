@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productImage: {fileID: 114394051749578398}
   productNameText: {fileID: 114296185424878736}
+  addButton: {fileID: 114119937811048328}
 --- !u!114 &114726344613942620
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -937,7 +937,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 686693032}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1009,10 +1009,10 @@ RectTransform:
   m_Father: {fileID: 1001586638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 115.21, y: -0.000006649437}
+  m_SizeDelta: {x: -230.41, y: -107.90786}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &859459663
 MonoBehaviour:
@@ -1063,7 +1063,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 175, y: 100}
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 230231409}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1381,7 +1381,7 @@ GameObject:
   - component: {fileID: 1218451349}
   - component: {fileID: 1218451351}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ShoppinglistContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

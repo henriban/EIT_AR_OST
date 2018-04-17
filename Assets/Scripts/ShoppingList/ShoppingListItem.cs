@@ -26,6 +26,7 @@ public class ShoppingListItem : MonoBehaviour {
     }
 
     private void HandleClick() {
-        scrollList.TransferItemToOtherShop(product);
+        //scrollList.TransferItemToOtherShop(product);
+        GameObject.Find("ShoppinglistContent").GetComponent<ShoppingList>().RemoveShoppinglistItem(product);
     }
 }

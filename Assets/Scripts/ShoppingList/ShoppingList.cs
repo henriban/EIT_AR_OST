@@ -11,11 +11,13 @@ public class ShoppingList : MonoBehaviour {
     public SimpleObjectPool productCardObjectPool;
   
     void Start() {
-        itemList = Data.AllProducts; // TODO: Change 
+
         RefreshDisplay();
     }
 
-    void RefreshDisplay() {
+   public void RefreshDisplay() {
+        Debug.Log("Refresh");
+        itemList = Data.ShoppingList;
         RemoveButtons();
         AddShoppingListItems();        
     }
@@ -56,5 +58,10 @@ public class ShoppingList : MonoBehaviour {
                 shopList.itemList.RemoveAt(i);
             }
         }
+    }
+
+    public void RemoveShoppinglistItem(Product itemToRemove) {
+        Data.RemoveProduct(itemToRemove);
+        RefreshDisplay();
     }
 }
