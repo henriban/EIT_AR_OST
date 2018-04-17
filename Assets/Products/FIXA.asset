@@ -19,3 +19,5 @@ MonoBehaviour:
     hjemmet ditt slik du vil ha det. Bygg p\xE5 verkt\xF8yskrinet du har fra f\xF8r,
     eller sett sammen et start-sett til alle de fremtidige prosjektene dine."
   inStore: 0
+  productPosition: {fileID: 1504799783167666, guid: b5dd8f3785a026744a75d4b743aef2be,
+    type: 2}

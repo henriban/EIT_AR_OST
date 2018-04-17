@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
-
+using System.Collections.Generic;
 
 public class Patrol : MonoBehaviour
 {
@@ -12,21 +12,23 @@ public class Patrol : MonoBehaviour
     public GameObject endPos;
     public float countdown = 0.030f;
 
-    private Transform[] points;
+    private List<Transform> points;
     private int destPoint = 0;
     private NavMeshAgent agent;
     private bool done = false;
 
     void Start()
     {
-        points[0] = startPos.transform;
-        int index = 1;
-        foreach(Product product in Data.ShoppingList)
+        points = new List<Transform>();
+        points.Add(startPos.transform);
+        //int index = 1;
+        foreach (Product product in Data.AllProducts)
+            // foreach (Product product in Data.ShoppingList)
         {
-            points[index] = product.productPosition.transform;
-            index++;
+            points.Add(product.productPosition.transform);
+            //index++;
         }
-        points[index] = endPos.transform;
+        points.Add(endPos.transform);
 
         agent = GetComponent<NavMeshAgent>();
 
@@ -35,18 +37,18 @@ public class Patrol : MonoBehaviour
         // approaches a destination point).
         agent.autoBraking = false;
 
-        GotoNextPoint();
+        //GotoNextPoint();
     }
 
-
+ 
     bool GotoNextPoint()
     {
         // Returns if no points have been set up
-        if (points.Length == 0)
+        if (points.Count == 0)
         {
             return false;
         }
-        if (destPoint < points.Length)
+        if (destPoint < points.Count)
         {
             agent.destination = points[destPoint].position;
             destPoint += 1;
