@@ -28,8 +28,18 @@ public class Patrol : MonoBehaviour
             points.Add(product.productPosition.transform);
             //index++;
         }
-        points.Add(endPos.transform);
 
+
+        points.Add(endPos.transform);
+        int count = 0;
+        foreach (Transform t in points)
+        // foreach (Product product in Data.ShoppingList)
+        {
+            count++;
+            Debug.Log(t.position+"for index"+ count);
+            
+            //index++;
+        }
         agent = GetComponent<NavMeshAgent>();
 
         // Disabling auto-braking allows for continuous movement
@@ -40,7 +50,7 @@ public class Patrol : MonoBehaviour
         //GotoNextPoint();
     }
 
- 
+ /*
     bool GotoNextPoint()
     {
         // Returns if no points have been set up
@@ -51,6 +61,12 @@ public class Patrol : MonoBehaviour
         if (destPoint < points.Count)
         {
             agent.destination = points[destPoint].position;
+            if (agent.destination != points[destPoint].position)
+            {
+                agent.destination = points[destPoint].position;
+            }
+            Debug.Log("Agent dest"+agent.destination);
+            Debug.Log("Point position" + points[destPoint].position +"at destPoint "+ destPoint);
             destPoint += 1;
             return false;
         } else
@@ -73,12 +89,11 @@ public class Patrol : MonoBehaviour
     {
         // Choose the next destination point when the agent gets
         // close to the current one.
-
         countdown -= Time.deltaTime;
         if (countdown <= 0.0f)
         {
-            Debug.Log(done);
-            Debug.Log(destPoint);
+            //Debug.Log(done);
+            //Debug.Log(destPoint);
             if (done == false)
             {
                 GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
@@ -92,9 +107,13 @@ public class Patrol : MonoBehaviour
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 if (GotoNextPoint())
                 {
+<<<<<<< HEAD
+=======
+                    //GotoNextPoint();
+>>>>>>> f256834c794fce4fa6af9d635440590856d8420b
                     done = true;
 
                 }
         }
-    }
+    }*/
 }
