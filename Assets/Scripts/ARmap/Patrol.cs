@@ -8,16 +8,25 @@ public class Patrol : MonoBehaviour
     public GameObject Cube;
     public GameObject Player;
     public GameObject imagetarget;
+    public GameObject startPos;
+    public GameObject endPos;
+    public float countdown = 0.030f;
 
-
-    public Transform[] points;
+    private Transform[] points;
     private int destPoint = 0;
     private NavMeshAgent agent;
     private bool done = false;
 
     void Start()
     {
-
+        points[0] = startPos.transform;
+        int index = 1;
+        foreach(Product product in Data.ShoppingList)
+        {
+            points[index] = product.productPosition.transform;
+            index++;
+        }
+        points[index] = endPos.transform;
 
         agent = GetComponent<NavMeshAgent>();
 
@@ -62,24 +71,29 @@ public class Patrol : MonoBehaviour
     {
         // Choose the next destination point when the agent gets
         // close to the current one.
-        Debug.Log(done);
-        Debug.Log(destPoint);
-       if (done == false)
-        {
-            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-            cube.transform.position = Player.transform.position;
-            cube.transform.SetParent(imagetarget.gameObject.transform);
-            cube.transform.rotation = Player.transform.rotation;
-            Vector3 scale = new Vector3(0.01f, 0.005f, 0.01f);
-            cube.transform.localScale = scale;
-            cube.GetComponent<Renderer>().material.color = Color.green;
-        }
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-            if (GotoNextPoint())
-            {
-                GotoNextPoint();
-                done = true;
 
+        countdown -= Time.deltaTime;
+        if (countdown <= 0.0f)
+        {
+            Debug.Log(done);
+            Debug.Log(destPoint);
+            if (done == false)
+            {
+                GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+                cube.transform.position = Player.transform.position;
+                cube.transform.SetParent(imagetarget.gameObject.transform);
+                cube.transform.rotation = Player.transform.rotation;
+                Vector3 scale = new Vector3(0.01f, 0.005f, 0.01f);
+                cube.transform.localScale = scale;
+                cube.GetComponent<Renderer>().material.color = Color.green;
             }
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                if (GotoNextPoint())
+                {
+                    GotoNextPoint();
+                    done = true;
+
+                }
+        }
     }
 }
