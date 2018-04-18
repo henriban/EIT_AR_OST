@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class SearchResultPanel : MonoBehaviour {
-
+public class SearchResultPanel : MonoBehaviour
+{
     private List<Product> itemList;
     private List<Product> searchList = new List<Product>();
 
@@ -15,41 +15,56 @@ public class SearchResultPanel : MonoBehaviour {
 
     public InputField searchField;
 
-	void Start () {
+    void Start()
+    {
         itemList = Data.AllProducts;
         InitList();
 
         searchField.onValueChanged.AddListener(delegate { HandleSearchFieldChange(); });
+        var grid = searchResultPanel.gameObject.GetComponent<GridLayoutGroup>();
+        var rect = searchResultPanel.gameObject.GetComponent<RectTransform>();
+        const int colCount = 2;
+        var cellWidth = rect.rect.width / colCount - grid.padding.horizontal - grid.spacing.x * (colCount-1)*2;
+                         
+        grid.cellSize = new Vector2(
+            cellWidth,
+            cellWidth/1.618033989f
+        );
     }
 
-    private void InitList() {
-        for (int i = 0; i < itemList.Count; i++) {
-            Product item = itemList[i];
-            GameObject searchResultCard = searchResultObjectPool.GetObject();
-            searchResultCard.transform.SetParent(searchResultPanel);
+    private void InitList()
+    {
+        foreach (var item in itemList)
+        {
+            var searchResultCard = searchResultObjectPool.GetObject();
+            searchResultCard.transform.SetParent(searchResultPanel, false);
 
-            SearchResultCard listItem = searchResultCard.GetComponent<SearchResultCard>();
+            var listItem = searchResultCard.GetComponent<SearchResultCard>();
             listItem.Setup(item);
         }
     }
 
-    private void HandleSearchFieldChange() {
-        if(searchField.text.Length > 0) {
+    private void HandleSearchFieldChange()
+    {
+        if (searchField.text.Length > 0)
+        {
             Search(searchField.text);
         }
-        else {
+        else
+        {
             RemoveOldList();
             InitList();
         }
     }
 
-    private void Search(string str) {
-        foreach(Product product in itemList) {
-            if (product.productName.ToLower().Contains(str.ToLower())) {
-                
-                if (!searchList.Contains(product)) {
-                    searchList.Add(product);
-                }
+    private void Search(string str)
+    {
+        foreach (Product product in itemList)
+        {
+            if (!product.productName.ToLower().Contains(str.ToLower())) continue;
+            if (!searchList.Contains(product))
+            {
+                searchList.Add(product);
             }
         }
 
@@ -58,15 +73,19 @@ public class SearchResultPanel : MonoBehaviour {
         searchList = new List<Product>();
     }
 
-    private void RemoveOldList() {
-        while (searchResultPanel.childCount > 0) {
+    private void RemoveOldList()
+    {
+        while (searchResultPanel.childCount > 0)
+        {
             GameObject toRemove = transform.GetChild(0).gameObject;
             searchResultObjectPool.ReturnObject(toRemove);
         }
     }
 
-    private void UpdateList() {
-        foreach (Product product in searchList) {
+    private void UpdateList()
+    {
+        foreach (Product product in searchList)
+        {
             GameObject searchResultCard = searchResultObjectPool.GetObject();
             searchResultCard.transform.SetParent(searchResultPanel);
 
