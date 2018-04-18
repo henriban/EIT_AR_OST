@@ -9,5 +9,6 @@ public class Product : ScriptableObject {
     public Sprite productImage;
     public string productDescription;
     public bool inStore;
+    public GameObject productPosition;
 
 }

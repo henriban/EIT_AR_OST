@@ -20,3 +20,5 @@ MonoBehaviour:
     trekk p\xE5 seteputa og armlenene/nakkest\xF8tta for \xE5 gj\xF8re stolen mer
     personlig."
   inStore: 1
+  productPosition: {fileID: 1254269063527392, guid: eee3e43d3619cf44ca3f85d30b244b37,
+    type: 2}

@@ -19,3 +19,5 @@ MonoBehaviour:
     som gj\xF8r hverdagen p\xE5 kj\xF8kkenet enklere. Den er stille og et godt valg
     for hjem med \xE5pen l\xF8sning."
   inStore: 0
+  productPosition: {fileID: 1923347999744944, guid: 79319d6ed5a5b8a41afb2c3639b779f9,
+    type: 2}

@@ -18,3 +18,5 @@ MonoBehaviour:
   productDescription: "Bordplata er dekket med en matt farge som beskytter den mot
     slag og riper og samtidig gj\xF8r overflata myk og glatt."
   inStore: 0
+  productPosition: {fileID: 1428181640850180, guid: e22e618aa8637854bad7b8b3da6d1700,
+    type: 2}
