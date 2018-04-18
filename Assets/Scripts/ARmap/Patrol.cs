@@ -13,6 +13,7 @@ public class Patrol : MonoBehaviour
     public float countdown = 0.030f;
 
     private List<Transform> points;
+    private Transform[] poeng;
     private int destPoint = 0;
     private NavMeshAgent agent;
     private bool done = false;
@@ -40,6 +41,9 @@ public class Patrol : MonoBehaviour
             
             //index++;
         }
+
+        poeng = points.ToArray();
+        Debug.Log(poeng);
         agent = GetComponent<NavMeshAgent>();
 
         // Disabling auto-braking allows for continuous movement
@@ -50,10 +54,32 @@ public class Patrol : MonoBehaviour
         //GotoNextPoint();
     }
 
- /*
+ 
     bool GotoNextPoint()
     {
         // Returns if no points have been set up
+        if (poeng.Length == 0)
+        {
+            return false;
+        }
+        if (destPoint < poeng.Length)
+        {
+            agent.destination = poeng[destPoint].position;
+            if (agent.destination != poeng[destPoint].position)
+            {
+                agent.destination = poeng[destPoint].position;
+            }
+            Debug.Log("Agent dest" + agent.destination);
+            Debug.Log("Point position" + poeng[destPoint].position + "at destPoint " + destPoint);
+            destPoint += 1;
+            return false;
+        }
+        else
+        {
+            Debug.Log("We are done");
+            return true;
+        }
+        /*
         if (points.Count == 0)
         {
             return false;
@@ -81,7 +107,7 @@ public class Patrol : MonoBehaviour
         // Choose the next point in the array as the destination,
         // cycling to the start if necessary.
         //destPoint = (destPoint + 1) % points.Length;
-        
+        */
     }
 
 
@@ -107,13 +133,10 @@ public class Patrol : MonoBehaviour
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 if (GotoNextPoint())
                 {
-<<<<<<< HEAD
-=======
                     //GotoNextPoint();
->>>>>>> f256834c794fce4fa6af9d635440590856d8420b
                     done = true;
 
                 }
         }
-    }*/
+    }
 }
