@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Direction : MonoBehaviour, IDragHandler
 {
-
     private float _y;
     public Transform RotationTarget;
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("ARmap");
+        }
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
