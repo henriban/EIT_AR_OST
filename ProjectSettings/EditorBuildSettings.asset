@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/aisleview.unity
+    guid: 5aedec1defb751a4081966d17312653a
+  - enabled: 1
+    path: Assets/ARmap.unity
+    guid: 71e7c82ad26b40a4eb007395d88141dc
+  - enabled: 1
+    path: Assets/ShoppingListScene.unity
+    guid: d075dc262762478408561a1f82c5660c
