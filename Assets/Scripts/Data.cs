@@ -9,9 +9,9 @@ public static class Data {
             return shoppingList;
         }
 
-        //set {
-        //    shoppingList = value;
-        //}
+        set {
+            shoppingList = value;
+        }
     }
 
     public static List<Product> AllProducts {
