@@ -64,7 +64,7 @@ public class Patrol : MonoBehaviour
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
             cube.transform.SetParent(Dots);
             cube.transform.localPosition = Player.transform.position;
-            cube.transform.localScale = new Vector3(0.5f, 0.25f, 0.5f);
+            cube.transform.localScale = new Vector3(0.5f, 0.1f, 0.5f);
             cube.transform.localRotation = Quaternion.identity;
             cube.GetComponent<Renderer>().material.color = Color.green;
         }
