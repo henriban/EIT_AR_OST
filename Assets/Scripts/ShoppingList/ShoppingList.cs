@@ -9,6 +9,8 @@ public class ShoppingList : MonoBehaviour {
 
     public Transform contentPanel;
     public SimpleObjectPool productCardObjectPool;
+
+    private bool colorListGray = true;
   
     void Start() {
 
@@ -16,13 +18,14 @@ public class ShoppingList : MonoBehaviour {
     }
 
    public void RefreshDisplay() {
-        Debug.Log("Refresh");
+        
         itemList = Data.ShoppingList;
         RemoveButtons();
         AddShoppingListItems();        
     }
 
     private void RemoveButtons() {
+        colorListGray = true;
         while (contentPanel.childCount > 0) {
             GameObject toRemove = transform.GetChild(0).gameObject;
             productCardObjectPool.ReturnObject(toRemove);
@@ -34,29 +37,20 @@ public class ShoppingList : MonoBehaviour {
             Product item = itemList[i];
             GameObject newProductCard = productCardObjectPool.GetObject();
             newProductCard.transform.SetParent(contentPanel);
+            newProductCard.transform.localScale = new Vector3(1, 1, 1);
+
+            if (colorListGray) {
+                newProductCard.GetComponent<Image>().color = new Color(0.97f, 0.97f, 0.97f);
+                colorListGray = false;
+            }
+            else {
+                newProductCard.GetComponent<Image>().color = new Color(0.99f, 0.99f, 0.99f);
+                colorListGray = true;
+            }
+            
 
             ShoppingListItem listItem = newProductCard.GetComponent<ShoppingListItem>();
-            listItem.Setup(item, this);
-        }
-    }
-
-    public void TransferItemToOtherShop(Product item) {
-
-        AddItem(item);
-        RemoveItem(item, this);
-
-        RefreshDisplay();
-    }
-
-    void AddItem(Product itemToAdd) {
-        itemList.Add(itemToAdd);
-    }
-
-    private void RemoveItem(Product itemToRemove, ShoppingList shopList) {
-        for (int i = shopList.itemList.Count - 1; i >= 0; i--) {
-            if (shopList.itemList[i] == itemToRemove) {
-                shopList.itemList.RemoveAt(i);
-            }
+            listItem.Setup(item);
         }
     }
 

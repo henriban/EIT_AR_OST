@@ -9,24 +9,21 @@ public class ShoppingListItem : MonoBehaviour {
     public Button removeButton;
 
     private Product product;
-    private ShoppingList scrollList;
 
     void Start () {
         
         removeButton.onClick.AddListener(HandleClick);
 	}
 
-    public void Setup(Product currentProduct, ShoppingList currentScrollList) {
+    public void Setup(Product currentProduct) {
 
         product = currentProduct;
-        scrollList = currentScrollList;
 
         porductImage.sprite = product.productImage;
         productNameText.text = product.productName;
     }
 
     private void HandleClick() {
-        //scrollList.TransferItemToOtherShop(product);
         GameObject.Find("ShoppinglistContent").GetComponent<ShoppingList>().RemoveShoppinglistItem(product);
     }
 }
