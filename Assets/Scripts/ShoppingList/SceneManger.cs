@@ -9,6 +9,10 @@ public class SceneManger : MonoBehaviour {
     void Start () {
         // Adds all product to the "DB"
         Data.AllProducts = itemList;
-        Data.ShoppingList = new List<Product>();
+        if(Data.ShoppingList == null)
+        {
+            Data.ShoppingList = new List<Product>();
+        }
+        
 	}	
 }

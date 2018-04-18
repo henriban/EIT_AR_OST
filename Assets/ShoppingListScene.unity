@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 181413311}
   - component: {fileID: 181413310}
   - component: {fileID: 181413312}
+  - component: {fileID: 181413313}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -374,6 +375,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 027c94703c8b9194188edcaa9fa27ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &181413313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 181413309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7884495c14b555540aee8a3f81bed6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &230231408
@@ -959,7 +971,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 686693033}
   m_HandleRect: {fileID: 686693032}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1182,7 +1194,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 230231410}
   m_HandleRect: {fileID: 230231409}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2031,7 +2043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1218451348}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
