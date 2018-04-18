@@ -76,7 +76,7 @@ public class Patrol : MonoBehaviour
         }
         else
         {
-            Debug.Log("We are done");
+            //Debug.Log("We are done");
             return true;
         }
         /*

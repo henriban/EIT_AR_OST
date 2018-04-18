@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44985795, g: 0.49992347, b: 0.5755807, a: 1}
+  m_IndirectSpecularColor: {r: 0.4498583, g: 0.49992347, b: 0.5755809, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -271,7 +271,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 102286177}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 181413312}
+        m_MethodName: LoadARMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &102286177
@@ -316,6 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 181413311}
   - component: {fileID: 181413310}
+  - component: {fileID: 181413312}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -353,6 +365,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &181413312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 181413309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027c94703c8b9194188edcaa9fa27ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &230231408
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +959,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 686693033}
   m_HandleRect: {fileID: 686693032}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1159,7 +1182,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 230231410}
   m_HandleRect: {fileID: 230231409}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
