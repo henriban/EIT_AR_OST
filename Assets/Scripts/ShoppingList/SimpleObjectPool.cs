@@ -33,6 +33,7 @@ public class SimpleObjectPool : MonoBehaviour {
         spawnedGameObject.SetActive(true);
 
         // return a reference to the instance
+        spawnedGameObject.transform.localScale = new Vector3(1,1,1);
         return spawnedGameObject;
     }
 
