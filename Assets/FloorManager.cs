@@ -9,6 +9,9 @@ public class FloorManager : MonoBehaviour {
     public GameObject showFloorPanelButton;
     public GameObject floorPannel;
 
+    public Sprite floorIcon;
+    public Sprite activeFloorIcon;
+
     [Header("Buttons")]
     public Button floor1Button;
     public Button floor2Button;
@@ -17,8 +20,7 @@ public class FloorManager : MonoBehaviour {
     public GameObject floor1;
     public GameObject floor2;
 
-    public Sprite floorIcon;
-    public Sprite activeFloorIcon;
+ 
 
     void Start () {
         showFloorPanelButton.GetComponent<Button>().onClick.AddListener(OpenFloorPanel);
