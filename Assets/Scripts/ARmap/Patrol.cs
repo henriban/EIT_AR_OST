@@ -14,21 +14,14 @@ public class Patrol : MonoBehaviour
     private NavMeshAgent _agent;
     private bool _done;
 
-    public GameObject[] Goals;
-
     void Start()
     {
         _poeng = new List<Vector3> {StartPos.transform.position};
-        foreach (Product product in Data.AllProducts) //.ShoppingList)
+        foreach (Product product in Data.ShoppingList)
         {
             var position = Products.transform.Find(product.productPosition.name).position;
             _poeng.Add(position);
-//            _poeng.Add(product.productPosition.transform);
         }
-//        foreach (var goal in Goals)
-//        {
-//            _poeng.Add(goal.transform);
-//        }
 
         _poeng.Add(EndPos.transform.position);
 
