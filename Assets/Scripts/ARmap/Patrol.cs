@@ -43,6 +43,7 @@ public class Patrol : MonoBehaviour
         updateGoals();
         _destPoint = 0;
         _done = false;
+        _agent.destination = _goals[0];
     }
 
 
