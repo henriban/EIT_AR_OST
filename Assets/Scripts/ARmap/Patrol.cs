@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,80 +8,73 @@ public class Patrol : MonoBehaviour
     public GameObject Player;
     public GameObject Products;
     public GameObject EndPos;
-
-
     public Transform Dots;
     private List<Vector3> _goals;
     private int _destPoint;
     private NavMeshAgent _agent;
     private bool _done = true;
+    
+    private Dictionary<string, Vector3> _productPositions = new Dictionary<string, Vector3>();
+    private Vector3 _endPosition;
 
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-        updateGoals();
+        _productPositions = Data.AllProducts
+            .ConvertAll(product => product.productPosition.name)
+            .ToDictionary(n => n, n => Products.transform.Find(n).position);
+        _endPosition = EndPos.transform.position;
+        UpdateGoals();
     }
 
-    void updateGoals()
+    void UpdateGoals()
     {
-        _goals = new List<Vector3> {};
-        foreach (Product product in Data.ShoppingList)
-        {
-            var position = Products.transform.Find(product.productPosition.name).position;
-            _goals.Add(position);
-        }
-
-        _goals.Add(EndPos.transform.position);
+        _goals = Data.ShoppingList.ConvertAll(p => _productPositions[p.productPosition.name]);
+        _goals.Add(_endPosition);
     }
 
-    public void generatePath()
+    public void GeneratePath()
     {
         foreach (Transform dot in Dots)
         {
             Destroy(dot.gameObject);
         }
 
-        updateGoals();
+        UpdateGoals();
         _destPoint = 0;
         _done = false;
         _agent.destination = _goals[0];
     }
 
 
-    bool GotoNextPoint()
+    private bool GotoNextPoint()
     {
-        if (_destPoint < _goals.Count)
-        {
-            Debug.Log(_goals[_destPoint]);
-            _agent.destination = _goals[_destPoint++];
+        if (_destPoint >= _goals.Count) return true;
+        _agent.destination = _goals[_destPoint++];
+        return false;
 
-            Debug.Log("Agent dest" + _agent.destination);
-            return false;
-        }
-
-        return true;
     }
 
     void Update()
     {
-        if (_goals.Count == 0)
-        {
-            _done = true;
-        }
+        if (_goals.Count == 0) _done = true;
+        if (_done) return;
+        
+        _createDot();
 
-        if (_done == false)
+        if (!_agent.pathPending && _agent.remainingDistance < _agent.stoppingDistance)
         {
-            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-            cube.transform.SetParent(Dots);
-            cube.transform.localPosition = Player.transform.position;
-            cube.transform.localScale = new Vector3(0.5f, 0.1f, 0.5f);
-            cube.transform.localRotation = Quaternion.identity;
-            cube.GetComponent<Renderer>().material.color = Color.green;
-
-            if (!_agent.pathPending && _agent.remainingDistance < _agent.stoppingDistance)
-            {
-                _done = GotoNextPoint();
-            }
+            _done = GotoNextPoint();
         }
+    }
+
+    private void _createDot()
+    {
+        var dot = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+        dot.transform.SetParent(Dots);
+        dot.transform.localPosition = Player.transform.position;
+        dot.transform.localScale = new Vector3(0.5f, 0.1f, 0.5f);
+        dot.transform.localRotation = Quaternion.identity;
+        dot.GetComponent<Renderer>().material.color = Color.green;
     }
 }
