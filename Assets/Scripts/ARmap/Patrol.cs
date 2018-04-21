@@ -9,32 +9,50 @@ public class Patrol : MonoBehaviour
     public GameObject StartPos;
     public GameObject EndPos;
 
-    private List<Vector3> _poeng;
+
+    public Transform Dots;
+    private List<Vector3> _goals;
     private int _destPoint;
     private NavMeshAgent _agent;
-    private bool _done;
+    private bool _done = true;
 
-    void Start()
+    private void Start()
     {
-        _poeng = new List<Vector3> {StartPos.transform.position};
+        _agent = GetComponent<NavMeshAgent>();
+        updateGoals();
+    }
+
+    void updateGoals()
+    {
+        _goals = new List<Vector3> {StartPos.transform.position};
         foreach (Product product in Data.ShoppingList)
         {
             var position = Products.transform.Find(product.productPosition.name).position;
-            _poeng.Add(position);
+            _goals.Add(position);
         }
 
-        _poeng.Add(EndPos.transform.position);
+        _goals.Add(EndPos.transform.position);
+    }
 
-        _agent = GetComponent<NavMeshAgent>();
+    public void generatePath()
+    {
+        foreach (Transform dot in Dots)
+        {
+            Destroy(dot.gameObject);
+        }
+
+        updateGoals();
+        _destPoint = 0;
+        _done = false;
     }
 
 
     bool GotoNextPoint()
     {
-        if (_destPoint < _poeng.Count)
+        if (_destPoint < _goals.Count)
         {
-            Debug.Log(_poeng[_destPoint]);
-            _agent.destination = _poeng[_destPoint++];
+            Debug.Log(_goals[_destPoint]);
+            _agent.destination = _goals[_destPoint++];
 
             Debug.Log("Agent dest" + _agent.destination);
             return false;
@@ -43,14 +61,13 @@ public class Patrol : MonoBehaviour
         return true;
     }
 
-
-    public Transform Dots;
     void Update()
     {
-        if (_poeng.Count == 0)
+        if (_goals.Count == 0)
         {
             _done = true;
         }
+
         if (_done == false)
         {
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
@@ -59,11 +76,11 @@ public class Patrol : MonoBehaviour
             cube.transform.localScale = new Vector3(0.5f, 0.1f, 0.5f);
             cube.transform.localRotation = Quaternion.identity;
             cube.GetComponent<Renderer>().material.color = Color.green;
-        }
 
-        if (!_agent.pathPending && _agent.remainingDistance < _agent.stoppingDistance)
-        {
-            _done = GotoNextPoint();
+            if (!_agent.pathPending && _agent.remainingDistance < _agent.stoppingDistance)
+            {
+                _done = GotoNextPoint();
+            }
         }
     }
 }
