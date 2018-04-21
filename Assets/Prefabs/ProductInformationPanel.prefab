@@ -233,8 +233,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Du kan dyrke planter innend\xF8rs hele \xE5ret, ogs\xE5 n\xE5r det er lite
-    tilgang p\xE5 dagslys."
+  m_Text: "Dette er en kombinasjon for deg som foretrekker den klassiske lenestolen.
+    Men hvis f\xF8ler for \xE5 v\xE6re litt mer rebelsk kan du bruke ulike trekk p\xE5
+    seteputa og armlenene/nakkest\xF8tta for \xE5 gj\xF8re stolen mer personlig."
 --- !u!114 &114200436230415334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,8 +302,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.22242647, g: 0.8897059, b: 0.36508617, a: 1}
+    m_HighlightedColor: {r: 0.36786333, g: 0.9264706, b: 0.39483064, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -317,7 +318,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114200436230415334}
+  m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -410,7 +411,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -450,7 +451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Planteholder med LED-vekstlys
+  m_Text: "Lenestol, Hillared m\xF8rk bl\xE5"
 --- !u!114 &114703635434708738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -537,7 +538,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BITTERGURKA
+  m_Text: DELAKTIG
 --- !u!114 &114901464336981692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -557,7 +558,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 941e4fdcb0152e34990a7e807f110b7d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa260155ba91431468a3e3e0f66aad97, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -630,7 +631,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 389 kr
+  m_Text: 4.990
 --- !u!222 &222028549174840342
 CanvasRenderer:
   m_ObjectHideFlags: 1

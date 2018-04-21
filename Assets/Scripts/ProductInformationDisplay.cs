@@ -28,7 +28,7 @@ public class ProductInformationDisplay : MonoBehaviour {
 
     private void AddProductToShoppinglist() {
         Data.AddProduct(product);
-        
+        GameObject.Find("ShoppinglistContent").GetComponent<ShoppingList>().RefreshDisplay();
     }
 
     public void Setup(Product product) {
@@ -39,8 +39,6 @@ public class ProductInformationDisplay : MonoBehaviour {
     private void ClosePanel() {
         ProductInfoPanel.SetActive(false);
     }
-
-    
 
     private void RefreshDisplay() {
         productNameText.text = product.productName;
