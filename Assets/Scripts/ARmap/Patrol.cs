@@ -40,7 +40,6 @@ public class Patrol : MonoBehaviour
             return false;
         }
 
-        Debug.Log("We are done");
         return true;
     }
 
