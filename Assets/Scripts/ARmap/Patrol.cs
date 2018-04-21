@@ -6,7 +6,6 @@ public class Patrol : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Products;
-    public GameObject StartPos;
     public GameObject EndPos;
 
 
@@ -24,7 +23,7 @@ public class Patrol : MonoBehaviour
 
     void updateGoals()
     {
-        _goals = new List<Vector3> {StartPos.transform.position};
+        _goals = new List<Vector3> {};
         foreach (Product product in Data.ShoppingList)
         {
             var position = Products.transform.Find(product.productPosition.name).position;
