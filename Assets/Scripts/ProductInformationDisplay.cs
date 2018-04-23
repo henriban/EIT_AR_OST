@@ -41,9 +41,10 @@ public class ProductInformationDisplay : MonoBehaviour {
     }
 
     private void RefreshDisplay() {
+        ProductInfoPanel.SetActive(true);
         productNameText.text = product.productName;
         productInfoText.text = product.productInfo;
-        productPriceText.text = product.productPrice;
+        productPriceText.text = product.productPrice + " kr";
         productImage.sprite = product.productImage;
         productDescriptionText.text = product.productDescription;
     }
