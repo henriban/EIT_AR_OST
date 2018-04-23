@@ -14,6 +14,8 @@ ModelImporter:
     400004: //RootNode
     400006: Plane
     2100000: unnamed
+    2100002: Material
+    2100004: Material_001
     2300000: Curve_000
     2300002: Curve_001
     2300004: Plane
@@ -61,12 +63,12 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 1
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -83,7 +85,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
