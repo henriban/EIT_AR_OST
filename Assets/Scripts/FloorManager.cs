@@ -29,6 +29,7 @@ public class FloorManager : MonoBehaviour {
         floor1Button.onClick.AddListener(ShowFloor1);
         floor2Button.onClick.AddListener(ShowFloor2);
 
+        ShowFloor2();
         CloseFloorPanel();
 	}
 
