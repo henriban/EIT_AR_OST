@@ -43,14 +43,18 @@ public class FloorManager : MonoBehaviour {
     }
 
     private void ShowFloor1() {
-        floor1.SetActive(true);
-        floor2.SetActive(false);
+        
+        floor1.GetComponent<Renderer>().enabled = false;
+        floor2.GetComponent<Renderer>().enabled = false;
+
         SetActiveFloor(floor1Button);
     }
 
     private void ShowFloor2() {
-        floor1.SetActive(false);
-        floor2.SetActive(true);
+        
+        floor1.GetComponent<Renderer>().enabled = true;
+        floor2.GetComponent<Renderer>().enabled = true;
+
         SetActiveFloor(floor2Button);
     }
 
