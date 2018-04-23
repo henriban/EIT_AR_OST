@@ -43,12 +43,14 @@ public class FloorManager : MonoBehaviour {
     }
 
     private void ShowFloor1() {
-        Debug.Log("Show Floor 1");
+        floor1.SetActive(true);
+        floor2.SetActive(false);
         SetActiveFloor(floor1Button);
     }
 
     private void ShowFloor2() {
-        Debug.Log("Show Floor 2");
+        floor1.SetActive(false);
+        floor2.SetActive(true);
         SetActiveFloor(floor2Button);
     }
 
