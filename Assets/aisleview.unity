@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.52010095, g: 0.51504445, b: 0.42587972, a: 1}
+  m_IndirectSpecularColor: {r: 0.5453732, g: 0.549843, b: 0.42757982, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -211,16 +211,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Textures:
-  - {fileID: 2800000, guid: 37c07e0e70bcb0d418a79b749d95c583, type: 3}
-  - {fileID: 2800000, guid: 37ef4007199bd24409dd301d2630ad82, type: 3}
-  - {fileID: 2800000, guid: d1e4705406400cd44a87241c60cfb840, type: 3}
-  - {fileID: 2800000, guid: f4628ff21737d4e47b46a0334b53de16, type: 3}
-  - {fileID: 2800000, guid: 6bd8f467afbd81745993111f272a240d, type: 3}
-  - {fileID: 2800000, guid: 73ddb5b9b200fff478afba412fec4aa9, type: 3}
-  - {fileID: 2800000, guid: 8c3ffe9d0d50e594a84d250794225ec7, type: 3}
-  - {fileID: 2800000, guid: fd3546d5b3428684091f6d536d5bee54, type: 3}
-  - {fileID: 2800000, guid: a491fb47be8d0154cafce3ff4b6d22f1, type: 3}
-  - {fileID: 2800000, guid: e0f67b152c2b5844086c21df9183618f, type: 3}
+  - {fileID: 2800000, guid: 52c98e925cb96df419e27974842bf824, type: 3}
+  - {fileID: 2800000, guid: 591b8452fec643445939fdb710516de6, type: 3}
+  - {fileID: 2800000, guid: 9f7906e923c730a409395159a55cd7e9, type: 3}
+  - {fileID: 2800000, guid: 8210ac4b217aafc44b3bfde283f91013, type: 3}
+  - {fileID: 2800000, guid: 8f6bcc9170dabcd4f9dc13bbc837f37e, type: 3}
+  - {fileID: 2800000, guid: b474913d91b495b498cf11936ba272ae, type: 3}
+  - {fileID: 2800000, guid: bfa982c95fb53f645932369ef8d2af03, type: 3}
+  - {fileID: 2800000, guid: d6e4fea29fbb3954fbc9385364015612, type: 3}
+  - {fileID: 2800000, guid: b81c4eb9f067f8d4082347c2487959e1, type: 3}
+  - {fileID: 2800000, guid: 86a3935e620751a47ae90897ebe3c9f1, type: 3}
+  - {fileID: 2800000, guid: 2279fdd58124f0a4ea7cfa9eebd861d0, type: 3}
+  - {fileID: 2800000, guid: c47b82734b504be43b35f312d0870120, type: 3}
 --- !u!1 &470153197
 GameObject:
   m_ObjectHideFlags: 0

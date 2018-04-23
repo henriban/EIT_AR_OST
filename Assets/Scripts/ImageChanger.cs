@@ -11,13 +11,14 @@ public class ImageChanger : MonoBehaviour
     void Start()
     {
         _slider = gameObject.GetComponent<Slider>();
-        _slider.maxValue = Textures.Length;
+        _slider.maxValue = Textures.Length - 1;
         _slider.onValueChanged.AddListener(setTexture);
+        setTexture(_textureIndex);
     }
 
     void setTexture(float index)
     {
-        RenderSettings.skybox.SetTexture("_MainTex", Textures[(int) index - 1]);
+        RenderSettings.skybox.SetTexture("_MainTex", Textures[(int) index]);
     }
 
     // Update is called once per frame
